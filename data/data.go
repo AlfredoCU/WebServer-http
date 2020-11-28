@@ -1,22 +1,31 @@
 package data
 
+// Import library
 import "strconv"
 
-// Data struct.
+// Data struct
 type Data struct {
 	Student string
 	Subject string
 	Grade   string
 }
 
+// AllData struct
 type AllData struct {
 	Data []Data
 }
 
+/* Add Function
+ * @param d Data
+ */
 func (dt *AllData) Add(d Data) {
 	dt.Data = append(dt.Data, d)
 }
 
+/* StudentAVG Function
+ * @param stu string
+ * @return avg string
+ */
 func (dt *AllData) StudentAVG(stu string) string {
 	var avg float64
 	var count = 0
@@ -33,6 +42,10 @@ func (dt *AllData) StudentAVG(stu string) string {
 	return strconv.FormatFloat(avg, 'f', 2, 64)
 }
 
+/* StudentAVG Function
+ * @param sub string
+ * @return avg string
+ */
 func (dt *AllData) SubjectAVG(sub string) string {
 	var avg float64
 	var count = 0
@@ -49,6 +62,9 @@ func (dt *AllData) SubjectAVG(sub string) string {
 	return strconv.FormatFloat(avg, 'f', 2, 64)
 }
 
+/* GeneralAVG Function
+ * @return string
+ */
 func (dt *AllData) GeneralAVG() string {
 	var avg float64
 
@@ -61,6 +77,9 @@ func (dt *AllData) GeneralAVG() string {
 	return strconv.FormatFloat(avg, 'f', 2, 64)
 }
 
+/* String Function
+ * @return string
+ */
 func (dt *AllData) String() string {
 	var html string
 
